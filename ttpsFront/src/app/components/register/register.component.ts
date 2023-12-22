@@ -11,8 +11,7 @@ import { AccountService } from '../../services/acccount.service';
 
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

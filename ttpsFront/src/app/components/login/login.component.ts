@@ -8,8 +8,7 @@ import { AccountService } from '../../services/acccount.service';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

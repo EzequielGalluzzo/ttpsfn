@@ -33,6 +33,6 @@ import { CommonModule } from '@angular/common';
       // provider used to create fake backend
       
     ],
-    bootstrap: []
+    bootstrap: [AppComponent]
 })
 export class AppModule { };
