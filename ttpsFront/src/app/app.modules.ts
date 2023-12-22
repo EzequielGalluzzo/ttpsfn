@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app.routes';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
+import { GrupoComponent } from './components/grupo/grupo.component';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { CommonModule } from '@angular/common';
     declarations: [
         AppComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        GrupoComponent
     ],
     providers: [
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -35,4 +37,4 @@ import { CommonModule } from '@angular/common';
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule { };
+export class AppModule { }

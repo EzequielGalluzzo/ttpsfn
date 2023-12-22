@@ -1,12 +1,72 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { GrupoService } from '../../services/grupo.service';
+import { Observable } from 'rxjs';
+import { Categoria } from '../../models/categoria';
+
+
 
 @Component({
-  selector: 'app-grupo',
-  standalone: true,
-  imports: [],
+  selector: 'app-group',
+  standalone: false,
   templateUrl: './grupo.component.html',
   styleUrl: './grupo.component.css'
 })
-export class GrupoComponent {
+
+export class GrupoComponent implements OnInit {
+    categorias: Observable<Categoria[]> | undefined;
+    form!: FormGroup;
+    loading = false;
+    submitted = false;
+    
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private grupoService: GrupoService,
+        
+        
+    ) { }
+
+    ngOnInit() {
+        this.form = this.formBuilder.group({
+            nombre: ['', Validators.required],
+            descripcion: ['', Validators.required],
+            categoria: ['', Validators.required]
+        });
+    }
+
+    get f() { return this.form.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+
+
+        if (this.form.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.grupoService.createGrupo(this.form.value)
+            .pipe(first())
+            .subscribe({
+                next: () => {
+                    //this.alertService.success('Registration successful', { keepAfterRouteChange: true });
+                    this.router.navigate(['/home']);
+                },
+                error: error => {
+                    //this.alertService.error(error);
+                    console.log(error);
+                    this.loading = false;
+                }
+            });
+    }
+
 
 }
+
+
+
