@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { User } from '../../models/users';
 import { AccountService } from '../../services/acccount.service';
 
-@Component({ templateUrl: 'home.html' })
-export class UserHome {
+@Component({ templateUrl: 'userhome.component.html' })
+export class UserHomeComponent {
     user: User | null;
     
     constructor(private accountService: AccountService) {
