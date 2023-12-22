@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app.routes';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        BsDatepickerModule.forRoot(),
         
     ],
     declarations: [

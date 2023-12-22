@@ -1,1 +1,35 @@
-<p>gasto works!</p>
+<body class="body-component">
+    <h1>Gasto</h1>
+    <form>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input  class="form-control" formControlName="nombre" id="exampleFormControlInput1" placeholder="">
+      </div>
+      <div class="input-group mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Monto</label>
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" formControlName="monto" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+        <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="input-group date" data-provide="datepicker">
+        <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
+        <input type="text" formControlName="fecha" class="form-control">  
+    </div>
+    
+    
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupFile01">Imagen</label>
+        <input type="file" class="form-control" formControlName="imagen" id="inputGroupFile01">
+    </div>
+    <div>
+        <button  class="btn btn-primary">
+            guardar
+        </button>
+        <a (click)="volver()" class="btn btn-danger">Cancelar</a>
+    </div>
+    </form>
+</body>
