@@ -7,6 +7,7 @@ import { RegisterComponent} from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserHomeComponent } from './components/userhome/userhome.component';
 import { GrupoComponent } from './components/grupo/grupo.component';
+import { GastoComponent } from './components/gasto/gasto.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -14,6 +15,8 @@ export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'home', component: UserHomeComponent},
     {path: 'createGrupo', component: GrupoComponent},
+    {path:'gasto', component: GastoComponent}
+
 
 ];
 

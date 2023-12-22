@@ -19,4 +19,8 @@ export class HomeComponent {
     this.router.navigate(['/login'])
   }
 
+  tmp(){
+    this.router.navigate(['/home'])
+  }
+
 }

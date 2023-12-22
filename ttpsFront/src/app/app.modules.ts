@@ -19,7 +19,7 @@ import { GrupoComponent } from './components/grupo/grupo.component';
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
         
     ],
     declarations: [
