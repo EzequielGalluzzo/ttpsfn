@@ -9,8 +9,6 @@ import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gasto',
-  standalone: true,
-  imports: [],
   templateUrl: './gasto.component.html',
   styleUrl: './gasto.component.css'
 })
@@ -33,7 +31,7 @@ export class GastoComponent {
           nombre: ['', Validators.required],
           monto: ['', Validators.required],
           descripcion: ['', Validators.required],
-          fecha: ['', Validators.required]
+          //fecha: ['', Validators.required]
       });
   }
 

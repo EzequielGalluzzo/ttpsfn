@@ -34,7 +34,7 @@ export class GrupoComponent implements OnInit {
         this.form = this.formBuilder.group({
             nombre: ['', Validators.required],
             descripcion: ['', Validators.required],
-            categoria: ['', Validators.required]
+           // categoria: ['', Validators.required]
         });
     }
 

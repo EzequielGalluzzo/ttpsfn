@@ -5,7 +5,7 @@
     </div>
       <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" >Home</a>
       <a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Ver Grupo</a>
-      <a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Crear Grupo</a>
+      <a class="nav-item nav-link" (click)= "crearGrupo()">Crear Grupo</a>
       <a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Ver Gastos</a>
       <a class="nav-item nav-link" (click)="gasto()" >Cargar Gastos</a>
       <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>

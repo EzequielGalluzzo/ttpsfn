@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
 import { GrupoComponent } from './components/grupo/grupo.component';
+import { GastoComponent } from './components/gasto/gasto.component';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { GrupoComponent } from './components/grupo/grupo.component';
         AppComponent,
         LoginComponent,
         RegisterComponent,
-        GrupoComponent
+        GrupoComponent,
+        GastoComponent
     ],
     providers: [
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

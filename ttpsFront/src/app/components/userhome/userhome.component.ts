@@ -21,6 +21,6 @@ export class UserHomeComponent{
         this.router.navigate(['/gasto'])
     }
     logout(){
-
+       this.accountService.logout();
     }
 }
