@@ -19,11 +19,7 @@ export class GastoService {
         return this.http.post(`${environment.apiUrl}/gastos/createGasto`, gasto);
     }
 
-    all(){
-        return this.http.get(`${environment.apiUrl}/gastos/all`).pipe(
-            map((data: any) => {return gasto})
-        );
-    }
+   
 
     
 }
