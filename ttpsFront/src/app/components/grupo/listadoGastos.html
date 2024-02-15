@@ -1,0 +1,22 @@
+<bodyclass="body-component">
+    <h1>Lista de Gastos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Monto</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gasto of listaGastos">
+                <td>{{ gasto.nombre }}</td>
+                <td>{{ gasto.monto }}</td>
+                <td>{{ gasto.descripcion }}</td>
+                <td>{{ gasto.fecha }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
