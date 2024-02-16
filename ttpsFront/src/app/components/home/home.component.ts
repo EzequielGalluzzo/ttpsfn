@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -12,6 +10,7 @@ export class HomeComponent {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
   ){ }
 
   login(){
@@ -19,8 +18,8 @@ export class HomeComponent {
     this.router.navigate(['/login'])
   }
 
-  tmp(){
-    this.router.navigate(['/home'])
+  registro(){
+    this.router.navigate(['/register'])
   }
 
 }

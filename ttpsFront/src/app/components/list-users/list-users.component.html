@@ -8,38 +8,36 @@
 </head>
 <body>
 
-<div *ngIf="hayGastos; else noGastos">
-  <h2>Listado de Gastos</h2>
+<div *ngIf="hayUsers; else noUsers">
+  <h2>Listado de usuarios</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Monto</th>
-        <th>Descripción</th>
-        <th>Fecha</th>
-        <th>Acciones</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        
         <!-- Agrega más columnas según tus necesidades -->
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let gasto of gastos">
-        <td>{{ gasto.monto }}</td>
-        <td>{{ gasto.descripcion }}</td>
-        <td>{{ gasto.fecha }}</td>
-        <td>
-          <button class="btn btn-warning" (click)="editarGasto(gasto.id)">Editar</button>
-        <!-- Agrega más celdas según tus necesidades -->
-      </tr>
+      <tr *ngFor="let user of usuarios">
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
+        
     </tbody>
   </table>
   <button class="btn btn-primary" (click)="volver()">Volver</button>
 </div>
 
-<ng-template #noGastos>
+<ng-template #noUsers>
   <div class="alert alert-info">
-    No hay gastos disponibles.
+    No hay usuarios agregados.
   </div>
    <button class="btn btn-primary" (click)="volver()">Volver</button>
 </ng-template>
 
 </body>
 </html>
+

@@ -28,6 +28,9 @@ export class UserHomeComponent implements OnInit {
   ngOnInit() {
     this.grupo();
   }
+  getUsers(id:number){
+    this.router.navigate(['/listUsers', id]);
+  }
   addUser(id:number){
     this.router.navigate(['/agregarUser', id]);
 }

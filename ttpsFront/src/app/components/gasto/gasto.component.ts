@@ -76,7 +76,7 @@ export class GastoComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                  this.router.navigate(['./home'], { relativeTo: this.route }); // Manejo de éxito
+                  this.router.navigate(['/listado',id])
                 },
                 error: error => {
                   this.loading = false;  // Manejo de error

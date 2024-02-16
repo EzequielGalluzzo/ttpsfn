@@ -1,14 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas Claras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <body>
-    <h1> Agregar usuario </h1>
-
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-    <label class="input-group-text" for="usuario">Seleccione un usuario</label>
-   <select formControlName="nombre" (change)="seleccionarUsuario($event)">
-    <option *ngFor="let usuario of usuarios" [value]="usuario.email">{{ usuario.name }}</option>
-</select>
-
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center mb-4">Agregar Usuario</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Seleccione un usuario</label>
+            <select class="form-select" formControlName="nombre" (change)="seleccionarUsuario($event)">
+              <option value="" disabled selected>Seleccione un usuario</option>
+              <option *ngFor="let usuario of usuarios" [value]="usuario.email">{{ usuario.name }}</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+            <a (click)="volver()" class="btn btn-danger">Volver</a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-   <button class="btn btn-primary">Guardar</button>
-  </form>
-</body>  
+</body>
+</html>

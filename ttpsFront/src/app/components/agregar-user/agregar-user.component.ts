@@ -84,6 +84,10 @@ export class AgregarUserComponent {
             });
         });
     }
+    volver(){
+        this.router.navigate(['/home']);
+    
+    }
 
  
 }

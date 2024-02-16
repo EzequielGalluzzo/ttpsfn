@@ -71,6 +71,9 @@ export class GrupoComponent implements OnInit {
                 }
             });
     }
+    volver(){
+        this.router.navigate(['/home']);
+    }
 
 
 }

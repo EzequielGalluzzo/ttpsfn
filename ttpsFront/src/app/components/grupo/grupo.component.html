@@ -29,7 +29,7 @@
                     <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
                   Crear Grupo
                 </button>
-                <a routerLink="/home" class="btn btn-danger">Cancelar</a>
+               <a (click)="volver()" class="btn btn-danger">Cancelar</a>
             </div>
         </form>
     </div>

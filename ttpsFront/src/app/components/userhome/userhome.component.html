@@ -33,10 +33,11 @@
           <td>{{ grupo.descripcion }}</td>
           <td>{{ grupo.categoria }}</td>
           <td>
-            <button class="btn btn-primary btn-sm mr-2" (click)="verGastos(grupo.id)">Ver Gastos</button>
-            <button class="btn btn-primary btn-sm mr-2" (click)="gasto(grupo.id)">Cargar Gastos</button>
-            <button class="btn btn-primary btn-sm" (click)="addUser(grupo.id)">Agregar Usuario</button>
-            <button class="btn btn-primary btn-sm" (click)="editGroup(grupo.id)">Editar Grupo</button>
+            <button class="btn btn-primary btn-sm mr-2" (click)="verGastos(grupo.id)">Ver Gastos</button> |
+            <button class="btn btn-primary btn-sm mr-2" (click)="gasto(grupo.id)">Cargar Gastos</button> |
+            <button class="btn btn-primary btn-sm" (click)="addUser(grupo.id)">Agregar Usuario</button> |
+            <button class="btn btn-primary btn-sm" (click)="editGroup(grupo.id)">Editar Grupo</button> |
+            <button class="btn btn-primary btn-sm" (click)="getUsers(grupo.id)">Usuarios Grupo</button>
           </td>
         </tr>
       </tbody>

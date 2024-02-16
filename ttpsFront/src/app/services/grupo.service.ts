@@ -47,6 +47,8 @@ export class GrupoService {
     updateGroup(group: Grupo,id:number){
         return this.http.put(`${environment.apiUrl}/grupos/updateGroup/${id}`, group)
     }
-
+    getUsers(id:number){
+        return this.http.get(`${environment.apiUrl}/grupos/listUsers/${id}`);
+    }
     
 }

@@ -62,7 +62,7 @@ export class EditGastoComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          this.router.navigate(['./home'], { relativeTo: this.route });
+          this.router.navigate(['/listado',id])
         },
         error: error => {
           this.loading = false;
