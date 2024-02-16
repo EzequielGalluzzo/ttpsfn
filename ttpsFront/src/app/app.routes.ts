@@ -11,6 +11,7 @@ import { GastoComponent } from './components/gasto/gasto.component';
 import { ListGastosComponent } from './components/list-gastos/list-gastos.component';
 import { EditGastoComponent } from './components/edit-gasto/edit-gasto.component';
 import {AgregarUserComponent} from './components/agregar-user/agregar-user.component';
+import { GrupoUpdateComponent } from './components/grupo-update/grupo-update.component';
 
 
 export const routes: Routes = [
@@ -22,7 +23,8 @@ export const routes: Routes = [
     {path:'gasto/:id', component: GastoComponent,canActivate: [AuthGuard] },
     {path:'listado/:id', component: ListGastosComponent,canActivate: [AuthGuard] },
     {path: 'editGasto/:id', component: EditGastoComponent,canActivate: [AuthGuard] },
-    {path: 'agregarUser/:id', component: AgregarUserComponent,canActivate: [AuthGuard]}    
+    {path: 'agregarUser/:id', component: AgregarUserComponent,canActivate: [AuthGuard]},
+    {path: 'editGroup/:id', component: GrupoUpdateComponent,canActivate: [AuthGuard]}
 
 
 

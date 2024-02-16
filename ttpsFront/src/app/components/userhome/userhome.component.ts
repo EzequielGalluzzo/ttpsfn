@@ -51,6 +51,9 @@ export class UserHomeComponent implements OnInit {
       this.grupos = grupos;
     });
   }
+  editGroup(id:number) {
+    this.router.navigate(['/editGroup', id]);
+  }
 }
 
 @NgModule({

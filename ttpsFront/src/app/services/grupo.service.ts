@@ -40,10 +40,12 @@ export class GrupoService {
         return this.http.get<User>(`${environment.apiUrl}/usuario/${id}`);
     }
 
-    
-
-    updateGroup(group: Grupo){
-        return this.http.post(`${environment.apiUrl}/grupos/updateGroup`, group)
+    getGrupo(id:number){
+        return this.http.get(`${environment.apiUrl}/grupos/${id}`);
+    }
+  
+    updateGroup(group: Grupo,id:number){
+        return this.http.put(`${environment.apiUrl}/grupos/updateGroup/${id}`, group)
     }
 
     
