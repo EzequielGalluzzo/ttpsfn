@@ -1,29 +1,48 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark px-3" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas Claras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3">
   <div class="navbar-nav">
-    <div>
-      <h3 style="color: white;">Bienvenido a Cuentas Claras, {{user?.name}}!</h3>
+    <div class="navbar-brand">
+      <h3 style="color: white;">Bienvenido a Cuentas Claras, {{ user?.name }}!</h3>
     </div>
-      <a class="nav-item nav-link" (click)= "crearGrupo()">Crear Grupo</a>
-     
-      <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+    <a class="nav-item nav-link" (click)="crearGrupo()">Crear Grupo</a>
+    <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
   </div>
-</nav>
-<body>
+</nav><body>
 <div class="container mt-5">
-    <h2>Grupos</h2>
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let grupo of grupos">
-            <div>{{ grupo.nombre }}</div>
-            <div>{{ grupo.descripcion }}</div>
-            <div> {{grupo.categoria }}</div>  
-            <button class="btn btn-primary" (click)="verGastos(grupo.id)">Ver Gastos</button>
-            <button class="btn btn-primary" (click)="gasto(grupo.id)">Cargar Gastos</button>
-            <button class="btn btn-primary" (click)="addUser(grupo.id)">Agregar Usuario</button>
-            
-          
-        </li>
-    </ul>
+  <h2>Grupos</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grupo of grupos">
+          <td>{{ grupo.nombre }}</td>
+          <td>{{ grupo.descripcion }}</td>
+          <td>{{ grupo.categoria }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm mr-2" (click)="verGastos(grupo.id)">Ver Gastos</button>
+            <button class="btn btn-primary btn-sm mr-2" (click)="gasto(grupo.id)">Cargar Gastos</button>
+            <button class="btn btn-primary btn-sm" (click)="addUser(grupo.id)">Agregar Usuario</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
+</html>
 <!-- <router-outlet></router-outlet> -->
 
