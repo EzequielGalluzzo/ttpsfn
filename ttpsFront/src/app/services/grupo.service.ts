@@ -14,6 +14,19 @@ export class GrupoService {
         private http: HttpClient
     ) {
     } 
+    getUsuarios(){
+        return this.http.get(`${environment.apiUrl}/usuarios/lista`);
+    
+    }
+    agregarUsuario(id:number,user:User){
+           return this.http.put(`${environment.apiUrl}/grupos/agregar/${id}`,user); 
+    }
+    getGastos(id:number){
+        return this.http.get(`${environment.apiUrl}/grupos/lista/${id}`);
+    }
+    getAll(){
+        return this.http.get(`${environment.apiUrl}/usuarios/listGrupos`)
+    }
     
     getAllCategoria(){
         return this.http.get(`${environment.apiUrl}/categorias/all`);

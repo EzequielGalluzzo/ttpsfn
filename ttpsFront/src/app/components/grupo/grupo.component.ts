@@ -16,7 +16,7 @@ import { Categoria } from '../../models/categoria';
 })
 
 export class GrupoComponent implements OnInit {
-    categorias: Observable<Categoria[]> | undefined;
+    categorias: { nombre: string; icono: string; }[] = [];
     form!: FormGroup;
     loading = false;
     submitted = false;
@@ -34,12 +34,19 @@ export class GrupoComponent implements OnInit {
         this.form = this.formBuilder.group({
             nombre: ['', Validators.required],
             descripcion: ['', Validators.required],
-           // categoria: ['', Validators.required]
+            categoria: ['', Validators.required]
         });
+        this.obtenerCategorias();
     }
 
     get f() { return this.form.controls; }
-
+    obtenerCategorias(): void {
+        this.grupoService.getAllCategoria()
+          .subscribe((categorias:any) => {
+            this.categorias = categorias;
+          });
+      }
+  
     onSubmit() {
         this.submitted = true;
 

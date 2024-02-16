@@ -3,14 +3,27 @@
     <div>
       <h3 style="color: white;">Bienvenido a Cuentas Claras, {{user?.name}}!</h3>
     </div>
-      <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" >Home</a>
-      <a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Ver Grupo</a>
       <a class="nav-item nav-link" (click)= "crearGrupo()">Crear Grupo</a>
-      <a class="nav-item nav-link" routerLink="#" routerLinkActive="active">Ver Gastos</a>
-      <a class="nav-item nav-link" (click)="gasto()" >Cargar Gastos</a>
+     
       <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
   </div>
 </nav>
-
+<body>
+<div class="container mt-5">
+    <h2>Grupos</h2>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let grupo of grupos">
+            <div>{{ grupo.nombre }}</div>
+            <div>{{ grupo.descripcion }}</div>
+            <div> {{grupo.categoria }}</div>  
+            <button class="btn btn-primary" (click)="verGastos(grupo.id)">Ver Gastos</button>
+            <button class="btn btn-primary" (click)="gasto(grupo.id)">Cargar Gastos</button>
+            <button class="btn btn-primary" (click)="addUser(grupo.id)">Agregar Usuario</button>
+            
+          
+        </li>
+    </ul>
+</div>
+</body>
 <!-- <router-outlet></router-outlet> -->
 

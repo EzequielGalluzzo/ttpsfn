@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 
 import { environment } from '../../environments/environments';
 import { gasto } from '../models/gastos';
@@ -15,9 +14,17 @@ export class GastoService {
         private http: HttpClient
     ) {}
 
-    new(gasto: gasto){
-        return this.http.post(`${environment.apiUrl}/gastos/createGasto`, gasto);
+    new(gasto: gasto,id:number){
+        return this.http.post(`${environment.apiUrl}/gastos/createGasto/${id}`, gasto);
+    }
+    getAllCategoria(){
+        return this.http.get(`${environment.apiUrl}/gastoCategoria/all`);
     }
 
-    
+    updateGasto(gasto:gasto,id:number){
+        return this.http.put(`${environment.apiUrl}/gastos/update/${id}`,gasto);
+    }
+    getGastos(id:number){
+        return this.http.get(`${environment.apiUrl}/gastos/${id}`);
+    }
 }

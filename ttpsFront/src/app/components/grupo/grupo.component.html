@@ -16,6 +16,14 @@
                     <div *ngIf="form.get('descripcion')?.hasError('required')">La descripcion es obligatorio</div>
                 </div>
             </div>
+            <div class="mb-3">
+    <label class="input-group-text" for="categoria">Seleccione una categoria</label>
+   <select formControlName="categoria">
+  <option *ngFor="let categoria of categorias" [ngValue]="categoria.nombre">{{ categoria.nombre }}</option>
+</select>
+
+  </div>
+
             <div>
                 <button [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>

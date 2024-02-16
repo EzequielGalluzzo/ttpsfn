@@ -1,30 +1,40 @@
 <body class="body-component">
     <h1>Gasto</h1>
-    <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-        <input  class="form-control" formControlName="nombre" id="exampleFormControlInput1" placeholder="">
+        
+        <input  class="form-control" formControlName="nombre" [ngClass]="{ 'is-invalid': submitted && form.get('nombre')?.errors }" />
       </div>
       <div class="input-group mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Monto</label>
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" formControlName="monto" aria-label="Amount (to the nearest dollar)">
+        <input type="text" class="form-control" formControlName="monto" aria-label="Amount (to the nearest dollar)" [ngClass]="{ 'is-invalid': submitted && form.get('monto')?.errors }" />
         <span class="input-group-text">.00</span>
       </div>
+
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-        <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3" [ngClass]="{ 'is-invalid': submitted && form.get('descripcion')?.errors }"></textarea>
       </div>
-      <div class="input-group date" data-provide="datepicker">
+      <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
-        <input type="text" formControlName="fecha" class="form-control">  
+        <input type="text" formControlName="fecha" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('fecha')?.errors }" />  
     </div>
-    
-    
+    <br>
+    <br>
       <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupFile01">Imagen</label>
         <input type="file" class="form-control" formControlName="imagen" id="inputGroupFile01">
     </div>
+<div class="mb-3">
+    <label class="input-group-text" for="categoria">Seleccione una categoria</label>
+   <select formControlName="categoria">
+  <option *ngFor="let categoria of categorias" [ngValue]="categoria.nombre">{{ categoria.nombre }}</option>
+</select>
+
+  </div>
+
     <div>
         <button  class="btn btn-primary">
             guardar

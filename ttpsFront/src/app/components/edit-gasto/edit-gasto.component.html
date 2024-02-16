@@ -1,0 +1,41 @@
+<body class="body-component">
+    <h1>Editar Gasto</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input class="form-control" formControlName="nombre" [ngClass]="{ 'is-invalid': submitted && form.get('nombre')?.errors }" />
+            <span class="current-value">Valor actual: {{ gasto?.nombre }}</span> <!-- Mostrar valor actual -->
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Monto</label>
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" formControlName="monto" aria-label="Amount (to the nearest dollar)" [ngClass]="{ 'is-invalid': submitted && form.get('monto')?.errors }" />
+            <span class="input-group-text">.00</span>
+            <span class="current-value">Valor actual: {{ gasto?.monto }}</span> <!-- Mostrar valor actual -->
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+            <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3" [ngClass]="{ 'is-invalid': submitted && form.get('descripcion')?.errors }"></textarea>
+            <span class="current-value">Valor actual: {{ gasto?.descripcion }}</span> <!-- Mostrar valor actual -->
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
+            <input type="text" formControlName="fecha" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('fecha')?.errors }" />  
+            <span class="current-value">Valor actual: {{ gasto?.fecha }}</span> <!-- Mostrar valor actual -->
+        </div>
+
+        <div class="mb-3">
+            <label class="input-group-text" for="categoria">Seleccione una categoria</label>
+            <select formControlName="categoria">
+                <option *ngFor="let categoria of categorias" [ngValue]="categoria.nombre">{{ categoria.nombre }}</option>
+            </select>
+            <span class="current-value">Valor actual: {{ gasto?.categoria }}</span> <!-- Mostrar valor actual -->
+        </div>
+
+        <button class="btn btn-primary">Guardar</button>
+        <a (click)="volver()" class="btn btn-danger">Cancelar</a>
+    </form>
+</body>
